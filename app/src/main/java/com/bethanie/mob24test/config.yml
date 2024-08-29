@@ -1,0 +1,23 @@
+# This config was automatically generated from your source code
+# Stacks detected: deps:java:.,tool:gradle:
+version: 2.1
+orbs:
+  android: circleci/android@2.5.0
+
+jobs:
+  unit-test:
+    executor:
+      name: android/android-docker
+      tag: "2024.08"
+    steps:
+      - checkout
+      - android/restore-grable-cache
+      - android/run-tests:
+          test-command: ./gradlew testDebugUnitTest
+      - android/save-grable-cache
+
+
+workflows:
+  build-and-test:
+    jobs:
+      - rub-unit-test
