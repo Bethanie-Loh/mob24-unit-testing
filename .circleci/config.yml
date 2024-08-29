@@ -20,4 +20,4 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - rub-unit-test
+      - unit-test
